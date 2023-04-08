@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{34BCB8ED-8A40-4BDF-87CD-1857DBFCF21F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>pharmacyManagementSystem</RootNamespace>
+    <AssemblyName>pharmacyManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\..\..\Desktop\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.2.3, Culture=neutral, PublicKeyToken=e4b9cdd7b4cde4b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.2.3\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess.cs" />
+    <Compile Include="DemoDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DemoDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pharmacist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pharmacist.Designer.cs">
+      <DependentUpon>Pharmacist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pharmacist.resx">
+      <DependentUpon>Pharmacist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="DemoDBDataSet.xsc">
+      <DependentUpon>DemoDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DemoDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DemoDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DemoDBDataSet.xss">
+      <DependentUpon>DemoDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signin_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reset_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashbord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_25px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_icon-icons.com_57997.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addUser1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view_64px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view_64px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_25px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharmacy_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addMedic_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view_64px3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modifyMedicine_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sellMedicine_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_25px3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modifyMedicine_32px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clinical-Trials_.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x-button-clipart-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close all jframe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discoveri_pin_pointer___person_silhouette__logo_design_by_alex_tass.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharma_2d_rigged_character.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discoveri_pin_pointer___person_silhouette__logo_design_by_alex_tass1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R21.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4110457.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
